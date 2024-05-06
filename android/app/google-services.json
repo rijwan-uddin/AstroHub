@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "887304359131",
+    "project_id": "shoptel-8fdea",
+    "storage_bucket": "shoptel-8fdea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887304359131:android:0e9b269e4214dca12d90fe",
+        "android_client_info": {
+          "package_name": "com.example.astroscope_hub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFdEZxJFlyzS6rbyrm_tMOAC0VtHzARMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
