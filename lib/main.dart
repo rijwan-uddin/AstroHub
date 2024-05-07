@@ -1,7 +1,11 @@
+import 'dart:js';
+
+import 'package:astroscope_hub/auth/auth_service.dart';
 import 'package:astroscope_hub/pages/dashboard_page.dart';
 import 'package:astroscope_hub/pages/login_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:go_router/go_router.dart';
 import 'firebase_options.dart';
 void main() async {
@@ -22,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+      builder: EasyLoading.init(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -30,6 +35,13 @@ class MyApp extends StatelessWidget {
     );
   }
   final _router = GoRouter(
+    initialLocation: DashboardPage.routeName,
+    redirect: (context, state){
+      if(AuthService.currentUser == null ){
+        return LoginPage.routeName; //if login then dashboard ,if not then login page
+      }
+      return null;
+    },
     routes: [
       GoRoute(
         name: DashboardPage.routeName,

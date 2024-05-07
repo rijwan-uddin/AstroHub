@@ -1,4 +1,9 @@
+import 'package:astroscope_hub/auth/auth_service.dart';
+import 'package:astroscope_hub/pages/dashboard_page.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:go_router/go_router.dart';
 
 class LoginPage extends StatefulWidget {
   static const String routeName = '/login';
@@ -20,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       body: Center(
           child: Form(
-            key: _formKey,
+        key: _formKey,
         child: ListView(
           padding: EdgeInsets.all(24.0),
           shrinkWrap: true,
@@ -61,11 +66,13 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             ElevatedButton(
-                onPressed: _authenticate, child: Text('Login as admin'),
+              onPressed: _authenticate,
+              child: Text('Login as admin'),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(_errMsg , style : TextStyle(fontSize: 18, color:Colors.red)),
+              child: Text(_errMsg,
+                  style: TextStyle(fontSize: 18, color: Colors.red)),
             ),
           ],
         ),
@@ -80,5 +87,23 @@ class _LoginPageState extends State<LoginPage> {
     super.dispose();
   }
 
-  void _authenticate() async {}
+  void _authenticate() async {
+    if (_formKey.currentState!.validate()) {
+      EasyLoading.show(status: 'please wait');
+      final email = _emailController.text;
+      final pass = _passwordController.text;
+      try {
+     final status =  await  AuthService.loginAdmin(email, pass);
+     EasyLoading.dismiss();
+     context.goNamed(DashboardPage.routeName);
+        
+      } on FirebaseAuthException catch (error) {
+        EasyLoading.dismiss();
+        setState(() {
+          _errMsg = error.message!;
+        });
+
+      }
+    }
+  }
 }
