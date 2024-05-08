@@ -1,8 +1,10 @@
 import 'dart:js';
 
 import 'package:astroscope_hub/auth/auth_service.dart';
+import 'package:astroscope_hub/pages/add_telescope.dart';
 import 'package:astroscope_hub/pages/dashboard_page.dart';
 import 'package:astroscope_hub/pages/login_page.dart';
+import 'package:astroscope_hub/pages/view_telescope_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -47,6 +49,19 @@ class MyApp extends StatelessWidget {
         name: DashboardPage.routeName,
         path: DashboardPage.routeName,
         builder: (context,state)=> DashboardPage(),
+
+        routes: [
+          GoRoute(
+              name: AddTelescopePage.routeName,
+              path: AddTelescopePage.routeName,
+              builder: (context,state)=> AddTelescopePage(),
+          ),
+          GoRoute(
+            name: ViewTelescopePage.routeName,
+            path: ViewTelescopePage.routeName,
+            builder: (context,state)=> ViewTelescopePage(),
+          ),
+        ]
       ),
       GoRoute(
         name: LoginPage.routeName,
