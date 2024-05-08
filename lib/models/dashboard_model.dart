@@ -1,4 +1,5 @@
 import 'package:astroscope_hub/pages/add_telescope.dart';
+import 'package:astroscope_hub/pages/brand_page.dart';
 import 'package:astroscope_hub/pages/view_telescope_page.dart';
 import 'package:flutter/material.dart';
 
@@ -15,5 +16,6 @@ class DashboardModel {
 
 const List<DashboardModel> dashboardModelList = [
   DashboardModel(title: 'Add Telescope', iconData: Icons.add, routeName: AddTelescopePage.routeName),
-  DashboardModel(title: 'View Telescope', iconData: Icons.inventory, routeName: ViewTelescopePage.routeName)
+  DashboardModel(title: 'View Telescope', iconData: Icons.inventory, routeName: ViewTelescopePage.routeName),
+  DashboardModel(title: 'All Brands', iconData: Icons.category, routeName: BrandPage.routeName),
 ];
