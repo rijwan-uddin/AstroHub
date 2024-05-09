@@ -14,7 +14,7 @@ class TelescopeProvider with ChangeNotifier {
   getAllBrands() {
     DbHelper.getAllBrands().listen((snapshot) {
       brandList = List.generate(snapshot.docs.length,
-          (index) => Brand.fromMap(snapshot.docs[index].data()));
+          (index) => Brand.fromJson(snapshot.docs[index].data()));
       notifyListeners();
     });
   }

@@ -13,7 +13,7 @@ class DbHelper{
   static Future<void> addBrand(Brand brand) {
  final doc =   _db.collection(collectionBrand).doc();
  brand.id = doc.id;
- return doc.set(brand.toMap());
+ return doc.set(brand.toJson());
   }
 
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllBrands() =>
