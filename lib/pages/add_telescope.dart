@@ -9,6 +9,7 @@ import 'package:astroscope_hub/utils/widget_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../models/brand.dart';
 
@@ -77,12 +78,16 @@ class _AddTelescopePageState extends State<AddTelescopePage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            getImage(ImageSource.camera);
+                          },
                           icon: Icon(Icons.camera),
                           label: Text('Camera'),
                         ),
                         TextButton.icon(
-                          onPressed: () {},
+                          onPressed: () {
+                            getImage(ImageSource.gallery);
+                          },
                           icon: Icon(Icons.browse_gallery),
                           label: Text('Gallary'),
                         )
@@ -258,6 +263,15 @@ class _AddTelescopePageState extends State<AddTelescopePage> {
     _priceController.dispose();
     super.dispose();
   }
+  void getImage(ImageSource source) async {
+    final file = await ImagePicker()
+        .pickImage(source: source, imageQuality : 50);
+    if(file != null){
+      setState(() {
+        imageLocalPath = file.path;
+      });
+    }
+  }
 
   void _saveTelescope() async {
     if (imageLocalPath == null) {
@@ -287,9 +301,11 @@ class _AddTelescopePageState extends State<AddTelescopePage> {
         );
         await Provider.of<TelescopeProvider>(context, listen: false)
             .addTelescope(telescope);
+        EasyLoading.dismiss();
         showMsg(context, 'Saved');
         _resetFields();
       } catch (error) {
+        EasyLoading.dismiss();
         print(error.toString());
       }
     }

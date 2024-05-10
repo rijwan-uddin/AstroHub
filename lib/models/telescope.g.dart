@@ -32,7 +32,7 @@ Map<String, dynamic> _$$TelescopeImplToJson(_$TelescopeImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'model': instance.model,
-      'brand': instance.brand,
+      'brand': instance.brand.toJson(),
       'type': instance.type,
       'dimension': instance.dimension,
       'weightInPound': instance.weightInPound,
@@ -43,7 +43,8 @@ Map<String, dynamic> _$$TelescopeImplToJson(_$TelescopeImpl instance) =>
       'stock': instance.stock,
       'avgRating': instance.avgRating,
       'discount': instance.discount,
-      'thumbnail': instance.thumbnail,
-      'additionalImage': instance.additionalImage,
+      'thumbnail': instance.thumbnail.toJson(),
+      'additionalImage':
+          instance.additionalImage.map((e) => e.toJson()).toList(),
       'description': instance.description,
     };

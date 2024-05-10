@@ -83,6 +83,7 @@ abstract class $TelescopeCopyWith<$Res> {
       List<ImageModel> additionalImage,
       String? description});
 
+  $BrandCopyWith<$Res> get brand;
   $ImageModelCopyWith<$Res> get thumbnail;
 }
 
@@ -186,6 +187,14 @@ class _$TelescopeCopyWithImpl<$Res, $Val extends Telescope>
 
   @override
   @pragma('vm:prefer-inline')
+  $BrandCopyWith<$Res> get brand {
+    return $BrandCopyWith<$Res>(_value.brand, (value) {
+      return _then(_value.copyWith(brand: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
   $ImageModelCopyWith<$Res> get thumbnail {
     return $ImageModelCopyWith<$Res>(_value.thumbnail, (value) {
       return _then(_value.copyWith(thumbnail: value) as $Val);
@@ -219,6 +228,8 @@ abstract class _$$TelescopeImplCopyWith<$Res>
       List<ImageModel> additionalImage,
       String? description});
 
+  @override
+  $BrandCopyWith<$Res> get brand;
   @override
   $ImageModelCopyWith<$Res> get thumbnail;
 }
@@ -321,7 +332,8 @@ class __$$TelescopeImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$TelescopeImpl implements _Telescope {
   _$TelescopeImpl(
       {this.id,

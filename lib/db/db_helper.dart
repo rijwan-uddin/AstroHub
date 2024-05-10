@@ -7,6 +7,7 @@ class DbHelper{
   static final FirebaseFirestore _db = FirebaseFirestore.instance;
   static const String collectionAdmin = 'Admins';
   static const String collectionTelescope = 'Telescopes';
+  static const String collectionBrand = 'Brands';
 
 
   static Future<bool> isAdmin(String uid) async{
