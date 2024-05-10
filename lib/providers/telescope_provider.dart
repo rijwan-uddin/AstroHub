@@ -32,6 +32,11 @@ class TelescopeProvider with ChangeNotifier {
       notifyListeners();
     });
   }
+
+  Telescope findTelescopeById(String id) =>
+  telescopeList.firstWhere((element) => element.id== id);
+
+
   Future<void> addTelescope(Telescope telescope){
     return DbHelper.addTelescope(telescope);
   }

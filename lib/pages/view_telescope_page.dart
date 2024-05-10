@@ -25,7 +25,9 @@ class _ViewTelescopePageState extends State<ViewTelescopePage> {
             itemBuilder: (context, index) {
               final telescope = provider.telescopeList[index];
               return InkWell(
-                onTap: () {},
+                onTap: () {
+
+                },
                 child: Card(
                   elevation: 0,
                   color: Colors.transparent,
