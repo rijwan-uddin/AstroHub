@@ -19,8 +19,8 @@ _$TelescopeImpl _$$TelescopeImplFromJson(Map<String, dynamic> json) =>
       mountDescription: json['mountDescription'] as String,
       price: json['price'] as num,
       stock: json['stock'] as num,
-      avgRating: json['avgRating'] as num,
-      discount: json['discount'] as num,
+      avgRating: json['avgRating'] as num? ?? 0.0,
+      discount: json['discount'] as num? ?? 0,
       thumbnail: ImageModel.fromJson(json['thumbnail'] as Map<String, dynamic>),
       additionalImage: (json['additionalImage'] as List<dynamic>)
           .map((e) => ImageModel.fromJson(e as Map<String, dynamic>))

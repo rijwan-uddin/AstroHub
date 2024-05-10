@@ -1,3 +1,4 @@
+import 'package:astroscope_hub/models/telescope.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../models/brand.dart';
@@ -5,6 +6,9 @@ import '../models/brand.dart';
 class DbHelper{
   static final FirebaseFirestore _db = FirebaseFirestore.instance;
   static const String collectionAdmin = 'Admins';
+  static const String collectionTelescope = 'Telescopes';
+
+
   static Future<bool> isAdmin(String uid) async{
    final snapshot =  await _db.collection(collectionAdmin).doc(uid).get();
    return snapshot.exists;
@@ -18,4 +22,11 @@ class DbHelper{
 
   static Stream<QuerySnapshot<Map<String, dynamic>>> getAllBrands() =>
       _db.collection(collectionBrand).snapshots();
+
+  static Future<void> addTelescope(Telescope telescope) {
+    final doc = _db.collection(collectionTelescope).doc();
+    telescope.id = doc.id;
+    return doc.set(telescope.toJson());
+
+  }
 }

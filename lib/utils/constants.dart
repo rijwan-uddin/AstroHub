@@ -12,3 +12,5 @@ abstract final class TelescopeUtils {
   static const focusList = [_autoFocus, _manualFocus,_autoAndManualFocus,];
 
 }
+
+const String telescopeImageDirectory = 'Telescopes/';

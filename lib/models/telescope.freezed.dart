@@ -335,8 +335,8 @@ class _$TelescopeImpl implements _Telescope {
       required this.mountDescription,
       required this.price,
       required this.stock,
-      required this.avgRating,
-      required this.discount,
+      this.avgRating = 0.0,
+      this.discount = 0,
       required this.thumbnail,
       required this.additionalImage,
       this.description});
@@ -367,8 +367,10 @@ class _$TelescopeImpl implements _Telescope {
   @override
   num stock;
   @override
+  @JsonKey()
   num avgRating;
   @override
+  @JsonKey()
   num discount;
   @override
   ImageModel thumbnail;
@@ -409,8 +411,8 @@ abstract class _Telescope implements Telescope {
       required String mountDescription,
       required num price,
       required num stock,
-      required num avgRating,
-      required num discount,
+      num avgRating,
+      num discount,
       required ImageModel thumbnail,
       required List<ImageModel> additionalImage,
       String? description}) = _$TelescopeImpl;

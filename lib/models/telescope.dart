@@ -18,8 +18,8 @@ class Telescope with _$Telescope {
     required String mountDescription,
     required num price,
     required num stock,
-    required num avgRating,
-    required num discount,
+    @Default(0.0) num avgRating,
+    @Default(0) num discount,
     required ImageModel thumbnail,
     required List<ImageModel> additionalImage,
     String? description
