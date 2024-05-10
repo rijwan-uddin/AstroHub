@@ -21,6 +21,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   void didChangeDependencies() {
     Provider.of<TelescopeProvider>(context, listen: false).getAllBrands();
+    Provider.of<TelescopeProvider>(context, listen: false).getAllTelescopes();
     super.didChangeDependencies();
   }
 

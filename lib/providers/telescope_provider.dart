@@ -11,6 +11,7 @@ import '../models/brand.dart';
 
 class TelescopeProvider with ChangeNotifier {
   List<Brand> brandList = [];
+  List<Telescope> telescopeList = [];
 
   Future<void> addBrand(String name) {
     final brand = Brand(name: name);
@@ -21,6 +22,13 @@ class TelescopeProvider with ChangeNotifier {
     DbHelper.getAllBrands().listen((snapshot) {
       brandList = List.generate(snapshot.docs.length,
           (index) => Brand.fromJson(snapshot.docs[index].data()));
+      notifyListeners();
+    });
+  }
+  getAllTelescopes() {
+    DbHelper.getAllTelescopes().listen((snapshot) {
+      telescopeList = List.generate(snapshot.docs.length,
+              (index) => Telescope.fromJson(snapshot.docs[index].data()));
       notifyListeners();
     });
   }
