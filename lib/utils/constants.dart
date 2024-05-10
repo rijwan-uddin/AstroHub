@@ -14,3 +14,4 @@ abstract final class TelescopeUtils {
 }
 
 const String telescopeImageDirectory = 'Telescopes/';
+const String currencySymbol='\$';

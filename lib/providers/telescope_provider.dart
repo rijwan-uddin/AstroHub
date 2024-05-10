@@ -40,6 +40,10 @@ class TelescopeProvider with ChangeNotifier {
   Future<void> addTelescope(Telescope telescope){
     return DbHelper.addTelescope(telescope);
   }
+  Future<void> updateTelescopeField(String , String field, dynamic value ){
+    return DbHelper().updateTelescopeField(id, {field : value});
+  }
+
 
 
   Future<ImageModel> uploadImage(String imageLocalPath) async {
@@ -54,5 +58,13 @@ class TelescopeProvider with ChangeNotifier {
     return ImageModel(imageName: imageName, directoryName: telescopeImageDirectory, downloadUrl: url,);
 
   }
+
+  Future<void> deleteImage(String id, ImageModel image) async {
+    final photoRef = FirebaseStorage.instance.ref()
+        .child('${image.directoryName}${image.imageName}');
+    return photoRef.delete();
+
+  }
+
 
 }

@@ -33,4 +33,9 @@ class DbHelper{
     return doc.set(telescope.toJson());
 
   }
+
+  Future<void> updateTelescopeField(id, Map<String, dynamic> map) {
+return _db.collection(collectionTelescope).doc(id).update(map);
+
+  }
 }

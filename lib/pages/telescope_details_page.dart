@@ -1,3 +1,4 @@
+import 'package:astroscope_hub/utils/constants.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
@@ -9,6 +10,7 @@ import '../customwidgets/image_holder_view.dart';
 import '../models/image_model.dart';
 import '../models/telescope.dart';
 import '../providers/telescope_provider.dart';
+import '../utils/helper_functions.dart';
 import '../utils/widget_functions.dart';
 
 class TelescopeDetailsPage extends StatefulWidget {
@@ -64,7 +66,7 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
                 children: [
                   FloatingActionButton.small(
                     onPressed: () {
-                      // getImage(ImageSource.gallery);
+                       getImage(ImageSource.gallery);
                     },
                     tooltip: 'Add additional image',
                     child: const Icon(Icons.add),
@@ -85,7 +87,7 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
                   ...telescope.additionalImage.map((e) => ImageHolderView(
                     imageModel: e,
                     onImagePressed: () {
-                      // _showImageOnDialog(e);
+                      _showImageOnDialog(e);
                     },
                   )),
                 ],
@@ -94,9 +96,9 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              telescope.description == null ?
-              context.goNamed(DescriptionPage.routeName, extra: telescope.id) :
-              _showDescriptionDialog();
+              // telescope.description == null ?
+              // context.goNamed(DescriptionPage.routeName, extra: telescope.id) :
+              // _showDescriptionDialog();
             },
             child: Text(telescope.description == null
                 ? 'Add Description'
@@ -117,12 +119,12 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
                   title: 'Edit Price',
                   onSubmit: (value) {
                     EasyLoading.show(status: 'Please Wait');
-                    provider
-                        .updateTelescopeField(telescope.id!, 'price', num.parse(value))
-                        .then((value) {
-                      EasyLoading.dismiss();
-                      showMsg(context, 'Price Updated');
-                    });
+                    // provider
+                    //     .updateTelescopeField(telescope.id!, 'price', num.parse(value))
+                    //     .then((value) {
+                    //   EasyLoading.dismiss();
+                    //   showMsg(context, 'Price Updated');
+                    // });
                   },
                 );
               },
@@ -137,13 +139,13 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
                   context: context,
                   title: 'Edit Discount',
                   onSubmit: (value) {
-                    EasyLoading.show(status: 'Please Wait');
-                    provider
-                        .updateTelescopeField(telescope.id!, 'discount', num.parse(value))
-                        .then((value) {
-                      EasyLoading.dismiss();
-                      showMsg(context, 'Discount Updated');
-                    });
+                    // EasyLoading.show(status: 'Please Wait');
+                    // provider
+                    //     .updateTelescopeField(telescope.id!, 'discount', num.parse(value))
+                    //     .then((value) {
+                    //   EasyLoading.dismiss();
+                    //   showMsg(context, 'Discount Updated');
+                    // });
                   },
                 );
               },
@@ -159,12 +161,12 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
                   title: 'Edit Stock',
                   onSubmit: (value) {
                     EasyLoading.show(status: 'Please Wait');
-                    provider
-                        .updateTelescopeField(telescope.id!, 'stock', num.parse(value))
-                        .then((value) {
-                      EasyLoading.dismiss();
-                      showMsg(context, 'Stock Updated');
-                    });
+                    // provider
+                    //     .updateTelescopeField(telescope.id!, 'stock', num.parse(value))
+                    //     .then((value) {
+                    //   EasyLoading.dismiss();
+                    //   showMsg(context, 'Stock Updated');
+                    // });
                   },
                 );
               },
@@ -244,33 +246,38 @@ class _TelescopeDetailsPageState extends State<TelescopeDetailsPage> {
       ],
     ));
   }
+  //
+  // _showDescriptionDialog() {
+  //   showDialog(context: context, builder: (context) => AlertDialog(
+  //     title: Text(telescope.model),
+  //     content: SingleChildScrollView(
+  //       child: Text(telescope.description!),
+  //     ),
+  //     actions: [
+  //       TextButton(
+  //         onPressed: () {
+  //           context.pop();
+  //           context.goNamed(DescriptionPage.routeName, extra: telescope.id);
+  //         },
+  //         child: const Text('Edit'),
+  //       ),
+  //       TextButton(
+  //         onPressed: () {
+  //           context.pop();
+  //         },
+  //         child: const Text('Close'),
+  //       )
+  //
+  //
+  //
+  //       ],
+  //     ),
+  //
+  //   );
+  // }
+  //
 
-  _showDescriptionDialog() {
-    showDialog(context: context, builder: (context) => AlertDialog(
-      title: Text(telescope.model),
-      content: SingleChildScrollView(
-        child: Text(telescope.description!),
-      ),
-      actions: [
-        TextButton(
-          onPressed: () {
-            context.pop();
-            context.goNamed(DescriptionPage.routeName, extra: telescope.id);
-          },
-          child: const Text('Edit'),
-        ),
-        TextButton(
-          onPressed: () {
-            context.pop();
-          },
-          child: const Text('Close'),
-        )
 
 
 
-        ],
-      ),
-
-    );
-  }
 }
