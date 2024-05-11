@@ -69,17 +69,17 @@ class MyApp extends StatelessWidget {
                   builder: (context, state) => ViewTelescopePage(),
                   routes: [
                     GoRoute(
-                      name: TelescopeDetailsPage.routeName,
-                      path: TelescopeDetailsPage.routeName,
-                      builder: (context, state) => TelescopeDetailsPage(
-                        id: state.extra! as String,
-                      ),
-                      routes: [
+                        name: TelescopeDetailsPage.routeName,
+                        path: TelescopeDetailsPage.routeName,
+                        builder: (context, state) => TelescopeDetailsPage(
+                              id: state.extra! as String,
+                            ),
+                        routes: [
                      GoRoute(
                        name: DescriptionPage.routeName,
                        path: DescriptionPage.routeName,
                        builder: (context, state) => DescriptionPage( id: state.extra! as String,),
-                     )
+                     ),
                       ]
                     ),
                   ]),

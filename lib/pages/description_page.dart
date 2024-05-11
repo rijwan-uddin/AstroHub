@@ -20,7 +20,7 @@ class _DescriptionPageState extends State<DescriptionPage> {
   @override
   void didChangeDependencies() {
     description = Provider.of<TelescopeProvider>(context, listen : false).findTelescopeById(widget.id).description;
-    if(description ! == null){
+    if(description != null){
       _controller.text = description!;
     }
     super.didChangeDependencies();

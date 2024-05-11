@@ -14,6 +14,7 @@ import '../utils/helper_functions.dart';
 import '../utils/widget_functions.dart';
 import 'description_page.dart';
 
+
 class TelescopeDetailsPage extends StatefulWidget {
   static const String routeName = 'telescopedetails';
   final String id;

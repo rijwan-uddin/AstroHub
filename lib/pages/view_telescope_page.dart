@@ -1,7 +1,10 @@
+import 'package:astroscope_hub/pages/telescope_details_page.dart';
 import 'package:astroscope_hub/providers/telescope_provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
+
 
 class ViewTelescopePage extends StatefulWidget {
   static const String routeName = 'viewtelescope';
@@ -26,7 +29,7 @@ class _ViewTelescopePageState extends State<ViewTelescopePage> {
               final telescope = provider.telescopeList[index];
               return InkWell(
                 onTap: () {
-
+                  context.goNamed(TelescopeDetailsPage.routeName, extra: telescope.id);
                 },
                 child: Card(
                   elevation: 0,
