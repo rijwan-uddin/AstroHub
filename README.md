@@ -32,13 +32,9 @@ Experience the convenience of intuitive controls, comprehensive features, and se
 
 ![astro7](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/fe41f0e9-b167-4bc8-b858-dc288af5ef7f)
 
-![ASTRO1](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/56b39632-b799-4c3b-9287-cf596a4ea4f1)
+![ASTRO1](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/56b39632-b799-4c3b-9287-cf596a4ea4f1) ![astro2](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/f722043c-d815-461f-b834-4a73c11eae62)
 
-![astro2](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/f722043c-d815-461f-b834-4a73c11eae62)
-
-![astro4](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/50f5393e-9fd8-48b0-a0c2-bf0c6d402c77)
-
-![astro5](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/66d6505d-03cc-4469-b7f0-fb27a0ab731e)
+![astro4](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/50f5393e-9fd8-48b0-a0c2-bf0c6d402c77) ![astro5](https://github.com/rijwan-uddin/Telescope-Ecommerce/assets/96045123/66d6505d-03cc-4469-b7f0-fb27a0ab731e)
 
 
 
