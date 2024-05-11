@@ -40,7 +40,7 @@ class TelescopeProvider with ChangeNotifier {
   Future<void> addTelescope(Telescope telescope){
     return DbHelper.addTelescope(telescope);
   }
-  Future<void> updateTelescopeField(String , String field, dynamic value ){
+  Future<void> updateTelescopeField(String id, String field, dynamic value ){
     return DbHelper().updateTelescopeField(id, {field : value});
   }
 

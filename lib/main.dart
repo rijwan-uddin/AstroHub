@@ -1,9 +1,10 @@
-import 'dart:js';
+
 
 import 'package:astroscope_hub/auth/auth_service.dart';
 import 'package:astroscope_hub/pages/add_telescope.dart';
 import 'package:astroscope_hub/pages/brand_page.dart';
 import 'package:astroscope_hub/pages/dashboard_page.dart';
+import 'package:astroscope_hub/pages/description_page.dart';
 import 'package:astroscope_hub/pages/login_page.dart';
 import 'package:astroscope_hub/pages/telescope_details_page.dart';
 import 'package:astroscope_hub/pages/view_telescope_page.dart';
@@ -73,6 +74,13 @@ class MyApp extends StatelessWidget {
                       builder: (context, state) => TelescopeDetailsPage(
                         id: state.extra! as String,
                       ),
+                      routes: [
+                     GoRoute(
+                       name: DescriptionPage.routeName,
+                       path: DescriptionPage.routeName,
+                       builder: (context, state) => DescriptionPage( id: state.extra! as String,),
+                     )
+                      ]
                     ),
                   ]),
               GoRoute(
