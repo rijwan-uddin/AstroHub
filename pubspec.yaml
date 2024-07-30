@@ -50,6 +50,7 @@ dependencies:
   connectivity_plus:
   freezed_annotation:
   json_annotation:
+  fl_chart:
 
 dev_dependencies:
   flutter_test:
