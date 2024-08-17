@@ -58,7 +58,14 @@ class ReportPage extends StatelessWidget {
 
           LineChartBarData(
             spots: [
-
+              FlSpot(0, 0.5),
+              FlSpot(1, 2),
+              FlSpot(2, 2),
+              FlSpot(3, 6),
+              FlSpot(4, 4),
+              FlSpot(5, 5),
+              FlSpot(7, 2),
+              FlSpot(9, 1),
             ],
             isCurved: true,
             isStrokeCapRound: true,
