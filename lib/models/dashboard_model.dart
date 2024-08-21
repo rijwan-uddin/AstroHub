@@ -20,5 +20,6 @@ const List<DashboardModel> dashboardModelList = [
   DashboardModel(title: 'Add Telescope', iconData: Icons.add, routeName: AddTelescopePage.routeName),
   DashboardModel(title: 'View Telescope', iconData: Icons.inventory, routeName: ViewTelescopePage.routeName),
   DashboardModel(title: 'All Brands', iconData: Icons.category, routeName: BrandPage.routeName),
+  DashboardModel(title: 'Orders', iconData: Icons.bar_chart, routeName: ReportPage.routeName),
   DashboardModel(title: 'Report', iconData: Icons.bar_chart, routeName: ReportPage.routeName),
 ];
