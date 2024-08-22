@@ -140,8 +140,8 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:go_router/go_router.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../auth/auth_service.dart';
- // Assuming this is your AuthService file
-import 'dashboard_page.dart'; // Assuming this is your DashboardPage file
+
+import 'dashboard_page.dart';
 
 class LoginPage extends StatefulWidget {
   static const String routeName = '/login';
